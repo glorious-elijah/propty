@@ -160,3 +160,169 @@ const quarterScreenHeight = getHeightFromScreen(0.25); // 25% of screen height
 - `getHeightFromScreen(percentage)`: Calculate height based on screen dimensions
 
 All percentage values should be between 0 and 1 (e.g., 0.5 for 50%).
+
+## Using Fonts
+
+Propty comes with a complete Lato font family that offers various weights and styles to enhance your UI. The fonts are already configured and ready to use throughout the application.
+
+### Available Font Variations
+
+The following Lato font variations are available:
+
+- `Lato-Regular`: For normal text
+- `Lato-Bold`: For emphasized text
+- `Lato-Light`: For lighter weight text
+- `Lato-Thin`: For very light text
+- `Lato-Black`: For extra bold text
+- `Lato-Italic`: For italic text
+- `Lato-BoldItalic`: For bold and italic text
+- `Lato-LightItalic`: For light and italic text
+- `Lato-ThinItalic`: For thin and italic text
+- `Lato-BlackItalic`: For black and italic text
+
+Additionally, `SpaceMono` is available for monospaced text needs.
+
+### How to Use Fonts in Styles
+
+You can use these fonts in your styles by specifying the fontFamily property:
+
+```typescript
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  normalText: {
+    fontFamily: "Lato-Regular",
+    fontSize: 16,
+  },
+  boldText: {
+    fontFamily: "Lato-Bold",
+    fontSize: 18,
+  },
+  lightText: {
+    fontFamily: "Lato-Light",
+    fontSize: 14,
+  },
+  italicText: {
+    fontFamily: "Lato-Italic",
+    fontSize: 16,
+  },
+  heading: {
+    fontFamily: "Lato-Black",
+    fontSize: 24,
+  },
+  caption: {
+    fontFamily: "Lato-ThinItalic",
+    fontSize: 12,
+  },
+});
+```
+
+### Using with ThemedText Component
+
+For consistent text styling that respects the theme, you can use the `ThemedText` component. The component provides convenient properties for styling text:
+
+```typescript
+import { ThemedText } from '@/components/common/ThemedText';
+
+// Basic usage with default font (Lato-Regular)
+<ThemedText>Regular text</ThemedText>
+
+// Using fontWeight property to make text bold
+<ThemedText fontWeight="bold">Bold text</ThemedText>
+
+// Using fontWeight property to make text light
+<ThemedText fontWeight="light">Light text</ThemedText>
+
+// Using fontWeight property with italic style
+<ThemedText fontWeight="bold" italicize={true}>Bold Italic text</ThemedText>
+
+// Combining different properties with custom colors
+<ThemedText
+  fontWeight="black"
+  italicize={true}
+  lightColor="#6E38E0"
+  darkColor="#8E58FF">
+  Custom colored black italic text
+</ThemedText>
+```
+
+#### ThemedText Props
+
+The `ThemedText` component accepts the following special props:
+
+| Prop         | Type                                                              | Description                                     |
+| ------------ | ----------------------------------------------------------------- | ----------------------------------------------- |
+| `fontWeight` | "thin" \| "light" \| "normal" \| "bold" \| "black"                | Controls the font weight                        |
+| `italicize`  | boolean                                                           | When true, applies the italic style to the text |
+| `type`       | "default" \| "title" \| "defaultSemiBold" \| "subtitle" \| "link" | Predefined text styles                          |
+| `lightColor` | string                                                            | Text color for light theme                      |
+| `darkColor`  | string                                                            | Text color for dark theme                       |
+
+#### FontWeight to Font Family Mapping
+
+| fontWeight Value | Font Family Used | With italicize=true |
+| ---------------- | ---------------- | ------------------- |
+| "thin"           | 'Lato-Thin'      | 'Lato-ThinItalic'   |
+| "light"          | 'Lato-Light'     | 'Lato-LightItalic'  |
+| "normal"         | 'Lato-Regular'   | 'Lato-Italic'       |
+| "bold"           | 'Lato-Bold'      | 'Lato-BoldItalic'   |
+| "black"          | 'Lato-Black'     | 'Lato-BlackItalic'  |
+
+### Font Weight Quick Reference
+
+| Text Style | Font Family to Use |
+| ---------- | ------------------ |
+| Normal     | 'Lato-Regular'     |
+| Bold       | 'Lato-Bold'        |
+| Light      | 'Lato-Light'       |
+| Extra Bold | 'Lato-Black'       |
+| Very Light | 'Lato-Thin'        |
+| Italic     | 'Lato-Italic'      |
+
+### Typography Constants
+
+```typescript
+// In constants/typography.ts
+export const typography = {
+  headingLarge: {
+    fontFamily: "Lato-Black",
+    fontSize: 28,
+  },
+  headingMedium: {
+    fontFamily: "Lato-Bold",
+    fontSize: 24,
+  },
+  headingSmall: {
+    fontFamily: "Lato-Bold",
+    fontSize: 20,
+  },
+  bodyRegular: {
+    fontFamily: "Lato-Regular",
+    fontSize: 16,
+  },
+  bodyBold: {
+    fontFamily: "Lato-Bold",
+    fontSize: 16,
+  },
+  caption: {
+    fontFamily: "Lato-Light",
+    fontSize: 14,
+  },
+  button: {
+    fontFamily: "Lato-Bold",
+    fontSize: 16,
+  },
+};
+
+// Usage in components
+import { typography } from "@/constants/typography";
+
+const styles = StyleSheet.create({
+  title: {
+    ...typography.headingMedium,
+  },
+  description: {
+    ...typography.bodyRegular,
+  },
+});
+```
