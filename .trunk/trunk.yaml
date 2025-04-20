@@ -30,5 +30,27 @@ actions:
   enabled:
     - trunk-announce
     - trunk-check-pre-push
+    - trunk-check-pre-commit  # Added pre-commit check
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
+
+# Enforce checks on every commit and push
+enforce:
+  enabled:
+    - pre-commit
+    - pre-push
+  
+  # Pre-commit hook configuration
+  pre-commit:
+    always-run:
+      - eslint
+      - prettier
+    fail-fast: true  # Stop after first failure
+    
+  # Pre-push hook configuration  
+  pre-push:
+    always-run:
+      - eslint
+      - prettier
+      - trufflehog  # Prevent secrets from being pushed
+    threshold: high  # Only block on high severity issues
