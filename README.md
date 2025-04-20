@@ -67,8 +67,96 @@ Join our community of developers creating universal apps.
 
 ## Using i18n translations
 
-DOCS implementing [plural](https://www.i18next.com/translation-function/plurals) forms in translation
-DOCS implementing [nested](https://www.i18next.com/translation-function/nesting) translation
-DOCS [formatting](https://www.i18next.com/translation-function/formatting) translation
-DOCS inserting values programmatically, [interpolating](https://www.i18next.com/translation-function/interpolation) translation
-DOCS [Caching](https://www.i18next.com/how-to/caching) translation
+DOCS implementing [https://www.i18next.com/translation-function/plurals](plural) forms in translation
+DOCS implementing [https://www.i18next.com/translation-function/nesting](nested) translation
+DOCS [https://www.i18next.com/translation-function/formatting](foromatting) translation
+DOCS inserting values programmatically, [https://www.i18next.com/translation-function/interpolation](interpolating) translation
+DOCS [https://www.i18next.com/how-to/caching](Caching) translation
+
+## Using Colors and other styles
+
+Propty provides a set of predefined styles and utilities in the `primaryStyles.ts` file to maintain consistency across the application.
+
+### Colors
+
+The application supports both light and dark themes with a consistent color palette:
+
+```typescript
+import { colors } from "@/constants/primaryStyles";
+import { useColorScheme } from "@/hooks/useColorScheme";
+
+// In a component:
+const colorScheme = useColorScheme();
+const backgroundColor = colors[colorScheme]["colour--primary"];
+```
+
+#### Available Colors
+
+- `colour--primary`: Primary brand color (#6E38E0)
+- `colour--white`: White color (#FFFFFF)
+- `colour--gray`: Gray color (#4D4D4D)
+- `colour--black`: Black color (#1A1E25)
+
+#### Applying Opacity to Colors
+
+To apply opacity to colors, you can concatenate the opacity percentage to the color string:
+
+```typescript
+// Apply 95% opacity to gray color
+const semiTransparentGray = colors.light["colour--gray"].concat("95");
+```
+
+### Spacing and Dimensions
+
+#### Border Radius
+
+```typescript
+import { borderRadius } from "@/constants/primaryStyles";
+
+// Usage:
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: borderRadius.lg, // 11px
+  },
+});
+```
+
+#### Padding and Margin
+
+```typescript
+import { padding, margin } from "@/constants/primaryStyles";
+
+// Usage:
+const styles = StyleSheet.create({
+  container: {
+    padding: padding.md, // 8px
+    marginBottom: margin.lg, // 12px
+  },
+});
+```
+
+### Responsive Dimensions
+
+The following utilities help create responsive layouts:
+
+```typescript
+import {
+  getWidthFromWindow,
+  getHeightFromWindow,
+  getWidthFromScreen,
+  getHeightFromScreen,
+} from "@/constants/primaryStyles";
+
+// Usage examples:
+const halfScreenWidth = getWidthFromWindow(0.5); // 50% of window width
+const quarterScreenHeight = getHeightFromScreen(0.25); // 25% of screen height
+```
+
+#### Available Functions
+
+- `getWidthFromWindow(percentage)`: Calculate width based on window dimensions
+- `getHeightFromWindow(percentage)`: Calculate height based on window dimensions
+- `getWidthFromScreen(percentage)`: Calculate width based on screen dimensions
+- `getHeightFromScreen(percentage)`: Calculate height based on screen dimensions
+
+All percentage values should be between 0 and 1 (e.g., 0.5 for 50%).
