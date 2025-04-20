@@ -1,0 +1,9 @@
+{
+  "app-name": "Propty",
+  "app-description": "Propty is a property management system that helps you manage your properties efficiently.",
+  "app-version": "Version 1.0.0",
+  "app-author": "Propty Team",
+  "welcome": "Welcome {{name}}",
+  "footer": "Thank you for using Propty!",
+  "contact": "For support, please contact us at support@propty.com"
+}
