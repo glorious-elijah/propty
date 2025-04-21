@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import "@/i18n";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -18,7 +19,16 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    "Lato-Regular": require("../assets/fonts/Lato-Regular.ttf"),
+    "Lato-Bold": require("../assets/fonts/Lato-Bold.ttf"),
+    "Lato-Light": require("../assets/fonts/Lato-Light.ttf"),
+    "Lato-Thin": require("../assets/fonts/Lato-Thin.ttf"),
+    "Lato-Black": require("../assets/fonts/Lato-Black.ttf"),
+    "Lato-Italic": require("../assets/fonts/Lato-Italic.ttf"),
+    "Lato-BoldItalic": require("../assets/fonts/Lato-BoldItalic.ttf"),
+    "Lato-LightItalic": require("../assets/fonts/Lato-LightItalic.ttf"),
+    "Lato-ThinItalic": require("../assets/fonts/Lato-ThinItalic.ttf"),
+    "Lato-BlackItalic": require("../assets/fonts/Lato-BlackItalic.ttf"),
   });
 
   useEffect(() => {
@@ -33,11 +43,14 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
+      <SafeAreaView style={{ flex: 1 }}>
+        <Stack>
+          <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+        <StatusBar style="auto" />
+      </SafeAreaView>
     </ThemeProvider>
   );
 }
