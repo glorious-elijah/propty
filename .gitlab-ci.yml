@@ -1,0 +1,24 @@
+variables:
+  DOCKER_IMAGE: node:22-alpine
+
+linter:
+  image: $DOCKER_IMAGE
+  stage: .pre
+  script:
+    - yarn install
+    - yarn lint
+
+unit tests:
+  image: $DOCKER_IMAGE
+  stage: test
+  script:
+    - yarn install
+    - yarn test
+
+build:
+  image: $DOCKER_IMAGE
+  stage: build
+  script:
+    - yarn install
+    - yarn build android
+    - yarn build ios

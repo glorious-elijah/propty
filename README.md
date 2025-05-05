@@ -35,6 +35,22 @@ npm run reset-project
 
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
+## Working with Git
+
+To push your changes to a remote repository:
+
+```bash
+# Add all files to staging
+git add .
+
+# Commit your changes
+git commit -m "Your commit message"
+
+# Push to the remote repository
+git push origin main # origin is the gitlab repository
+git push gh-origin main # gh-origin is the github repository
+```
+
 ## Learn more
 
 To learn more about developing your project with Expo, look at the following resources:
@@ -51,8 +67,8 @@ Join our community of developers creating universal apps.
 
 ## Using i18n translations
 
-DOCS implementing [https://www.i18next.com/translation-function/plurals](plural) forms in translation
-DOCS implementing [https://www.i18next.com/translation-function/nesting](nested) translation
-DOCS [https://www.i18next.com/translation-function/formatting](foromatting) translation
-DOCS inserting values programmatically, [https://www.i18next.com/translation-function/interpolation](interpolating) translation
-DOCS [https://www.i18next.com/how-to/caching](Caching) translation
+DOCS implementing [plural](https://www.i18next.com/translation-function/plurals) forms in translation
+DOCS implementing [nested](https://www.i18next.com/translation-function/nesting) translation
+DOCS [formatting](https://www.i18next.com/translation-function/formatting) translation
+DOCS inserting values programmatically, [interpolating](https://www.i18next.com/translation-function/interpolation) translation
+DOCS [Caching](https://www.i18next.com/how-to/caching) translation
