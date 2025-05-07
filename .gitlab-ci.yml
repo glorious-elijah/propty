@@ -7,17 +7,3 @@ linter:
   script:
     - yarn install
     - yarn lint
-# tests:
-#   image: $DOCKER_IMAGE
-#   stage: test
-#   script:
-#     - yarn install
-#     - yarn test
-
-# build:
-#   image: $DOCKER_IMAGE
-#   stage: build
-#   script:
-#     - yarn install
-#     - yarn build android
-#     - yarn build ios
