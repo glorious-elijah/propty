@@ -8,7 +8,7 @@ lint:
     - yarn install
     - yarn lint
 
-deploy_to_main:
+deploy_main:
   image: $DOCKER_IMAGE
   stage: deploy
   script:
