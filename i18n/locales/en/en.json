@@ -5,5 +5,30 @@
   "app-author": "Propty Team",
   "welcome": "Welcome {{name}}",
   "footer": "Thank you for using Propty!",
-  "contact": "For support, please contact us at support@propty.com"
+  "contact": "For support, please contact us at support@propty.com",
+  "onboarding": {
+    "user-purpose": "What brings you to $t(app-name)?",
+    "select-user-type": "Select the option that best fits what you're here to do.",
+    "looking-to-buy-or-rent": {
+      "title": "I'm looking to $t(buy) or $t(rent)?",
+      "description": "Browse listings, contact owners, and find your next space."
+    },
+    "property-to-list": {
+      "title": "I have a property to list.",
+      "description": "Post listings, track interest, and connect with buyers or renters."
+    }
+  },
+  "label": {
+    "rent": "Rent",
+    "lease": "Lease",
+    "buy": "Buy",
+    "sell": "Sell",
+    "tenant": "Tenant",
+    "landlord": "Landlord",
+    "property": "Property",
+    "payment": "Payment",
+    "invoice": "Invoice",
+    "dashboard": "Dashboard",
+    "continue": "Continue"
+  }
 }

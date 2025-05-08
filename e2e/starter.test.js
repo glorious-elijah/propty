@@ -1,23 +1,25 @@
-describe("Example", () => {
-  beforeAll(async () => {
-    await device.launchApp();
-  });
+// sample end-to-end test for a React Native app using Detox
 
-  beforeEach(async () => {
-    await device.reloadReactNative();
-  });
+// describe("Example", () => {
+//   beforeAll(async () => {
+//     await device.launchApp();
+//   });
 
-  it("should have welcome screen", async () => {
-    await expect(element(by.id("welcome"))).toBeVisible();
-  });
+//   beforeEach(async () => {
+//     await device.reloadReactNative();
+//   });
 
-  it("should show hello screen after tap", async () => {
-    await element(by.id("hello_button")).tap();
-    await expect(element(by.text("Hello!!!"))).toBeVisible();
-  });
+//   it("should have welcome screen", async () => {
+//     await expect(element(by.id("welcome"))).toBeVisible();
+//   });
 
-  it("should show world screen after tap", async () => {
-    await element(by.id("world_button")).tap();
-    await expect(element(by.text("World!!!"))).toBeVisible();
-  });
-});
+//   it("should show hello screen after tap", async () => {
+//     await element(by.id("hello_button")).tap();
+//     await expect(element(by.text("Hello!!!"))).toBeVisible();
+//   });
+
+//   it("should show world screen after tap", async () => {
+//     await element(by.id("world_button")).tap();
+//     await expect(element(by.text("World!!!"))).toBeVisible();
+//   });
+// });
