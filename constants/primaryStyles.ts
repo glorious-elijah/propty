@@ -84,7 +84,7 @@ export const typography = {
 export const getHeightFromWindow = (percentage: number) => {
   if (percentage > 1 || percentage < 0) {
     console.warn(
-      `getHeightFromWindow expects a value between 0 and 1, percentage ${percentage} can't be computed fallingback to 1`
+      `getHeightFromWindow expects a value between 0 and 1, percentage ${percentage} can't be computed fallingback to 1`,
     );
 
     return 1;
@@ -101,7 +101,7 @@ export const getHeightFromWindow = (percentage: number) => {
 export const getWidthFromWindow = (percentage: number) => {
   if (percentage > 1 || percentage < 0) {
     console.warn(
-      `getHeightFromWindow expects a value between 0 and 1, percentage ${percentage} can't be computed fallingback to 1`
+      `getHeightFromWindow expects a value between 0 and 1, percentage ${percentage} can't be computed fallingback to 1`,
     );
 
     return 1;
@@ -118,7 +118,7 @@ export const getWidthFromWindow = (percentage: number) => {
 export const getHeightFromScreen = (percentage: number) => {
   if (percentage > 1 || percentage < 0) {
     console.warn(
-      `getHeightFromScreen expects a value between 0 and 1, percentage ${percentage} can't be computed fallingback to 1`
+      `getHeightFromScreen expects a value between 0 and 1, percentage ${percentage} can't be computed fallingback to 1`,
     );
 
     return 1;
@@ -135,7 +135,7 @@ export const getHeightFromScreen = (percentage: number) => {
 export const getWidthFromScreen = (percentage: number) => {
   if (percentage > 1 || percentage < 0) {
     console.warn(
-      `getHeightFromScreen expects a value between 0 and 1, percentage ${percentage} can't be computed fallingback to 1`
+      `getHeightFromScreen expects a value between 0 and 1, percentage ${percentage} can't be computed fallingback to 1`,
     );
 
     return 1;

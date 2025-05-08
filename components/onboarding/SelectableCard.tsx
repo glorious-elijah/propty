@@ -50,8 +50,8 @@ const SelectableCard = ({
             isPressed || isActive
               ? colors.light["colour--primary"]
               : showBorderWhenInactive
-              ? colors.light["colour--gray"].concat("80")
-              : "transparent",
+                ? colors.light["colour--gray"].concat("80")
+                : "transparent",
           borderRadius:
             isPressed || isActive || showBorderWhenInactive
               ? borderRadius.lg

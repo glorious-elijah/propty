@@ -23,7 +23,7 @@ export function ThemedText({
 }: ThemedTextProps) {
   const color = useThemeColor(
     { light: lightColor, dark: darkColor },
-    "colour--gray"
+    "colour--gray",
   );
 
   const fontFamily = getFontFamily(fontWeight, italicize);
