@@ -1,12 +1,5 @@
-workflow:
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-
-variables:
-  DOCKER_IMAGE: node:22-alpine
-
-lint:
-  image: $DOCKER_IMAGE
+linter:
+  image: node:18-alpine
   stage: .pre
   script:
     - yarn install
